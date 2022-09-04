@@ -1,16 +1,17 @@
 package com.example.converter
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.example.converter.databinding.ActivityMainBinding
+
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val dataModel: DataModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Converter)
         super.onCreate(savedInstanceState)
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.data_frameLayout, LengthFragment.newInstance())
+            .replace(R.id.data_frameLayout, DataFragment.newInstance())
             .commit()
 
     }
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             .commit()
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.data_frameLayout, LengthFragment.newInstance())
+            .replace(R.id.data_frameLayout, DataFragment.newInstance())
             .commit()
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -49,21 +50,16 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId){
             R.id.length_menu_item ->{
                 dataModel.inputData.value=""
-                dataModel.typeOfValue.value=item.title.toString() 
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.data_frameLayout, LengthFragment.newInstance())
-                    .commit()
+                dataModel.typeOfValue.value="Length"
+
             }
             R.id.weight_menu_item ->{
-                dataModel.typeOfValue.value=item.title.toString()
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.data_frameLayout, WeightFragment.newInstance())
-                    .commit()
+                dataModel.inputData.value=""
+                dataModel.typeOfValue.value="Weight"
             }
             R.id.time_menu_item ->{
-                dataModel.typeOfValue.value=item.title.toString()
+                dataModel.inputData.value=""
+                dataModel.typeOfValue.value="Time"
             }
 
         }

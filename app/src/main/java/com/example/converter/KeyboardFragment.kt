@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
 import com.example.converter.databinding.FragmentKeyboardBinding
 
 class KeyboardFragment : Fragment() {
@@ -20,7 +21,10 @@ class KeyboardFragment : Fragment() {
 
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var string:String=""
+        var string=""
+        dataModel.inputData.observe(activity as LifecycleOwner) {
+            string=it
+        }
         binding.btn0.setOnClickListener{
             string+="0"
             dataModel.inputData.value=string
