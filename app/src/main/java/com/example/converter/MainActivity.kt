@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
+        supportActionBar?.title="Length"
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.keyboard_frameLayout, KeyboardFragment.newInstance())
@@ -51,15 +52,18 @@ class MainActivity : AppCompatActivity() {
             R.id.length_menu_item ->{
                 dataModel.inputData.value=""
                 dataModel.typeOfValue.value="Length"
+                supportActionBar?.title="Length"
 
             }
             R.id.weight_menu_item ->{
                 dataModel.inputData.value=""
                 dataModel.typeOfValue.value="Weight"
+                supportActionBar?.title="Weight"
             }
             R.id.time_menu_item ->{
                 dataModel.inputData.value=""
                 dataModel.typeOfValue.value="Time"
+                supportActionBar?.title="Time"
             }
 
         }

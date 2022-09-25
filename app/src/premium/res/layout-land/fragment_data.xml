@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/btn_swap_units"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClickSwap"
+            android:src="@drawable/ic_swap"
+            app:layout_constraintBottom_toTopOf="@+id/btn_convert"
+            app:layout_constraintEnd_toStartOf="@+id/spinner_output"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toEndOf="@+id/spinner_input"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text2"
+            app:layout_constraintVertical_bias="0.632" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_text"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_input"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:textAlignment="center" />
+
+            <!--this is the actual edit text which takes the input-->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/btn_swap_values"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClickSwap"
+            android:src="@drawable/ic_swap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text" />
+
+        <Spinner
+            android:id="@+id/spinner_input"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:entries="@array/length_array"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text2"
+            app:layout_constraintHorizontal_bias="0.015"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text2"
+            app:layout_constraintVertical_bias="0.319" />
+
+        <Spinner
+            android:id="@+id/spinner_output"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="32dp"
+            android:entries="@array/length_array"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.996"
+            app:layout_constraintStart_toStartOf="@+id/edit_text2"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text2"
+            app:layout_constraintVertical_bias="0.351" />
+
+        <Button
+            android:id="@+id/btn_convert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/convert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_input"
+            app:layout_constraintVertical_bias="0.651" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_text2"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="Result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_swap_values">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_output"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:textAlignment="center" />
+
+            <!--this is the actual edit text which takes the input-->
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        <EditText-->
+        <!--            android:id="@+id/edit_output"-->
+        <!--            android:layout_width="180dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="32dp"-->
+        <!--            android:allowClickWhenDisabled="true"-->
+        <!--            android:clickable="false"-->
+        <!--            android:ems="10"-->
+        <!--            android:focusable="false"-->
+        <!--            android:inputType="none"-->
+        <!--            android:singleLine="true"-->
+        <!--            android:textAlignment="center"-->
+        <!--            />-->
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/paste_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_content_paste_24"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toEndOf="@+id/edit_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.49" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/copy_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_content_copy_24"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toEndOf="@+id/edit_text2"
+            app:layout_constraintTop_toBottomOf="@+id/paste_btn"
+            app:layout_constraintVertical_bias="0.831" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

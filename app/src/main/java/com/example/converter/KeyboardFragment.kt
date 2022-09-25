@@ -26,8 +26,11 @@ class KeyboardFragment : Fragment() {
             string=it
         }
         binding.btn0.setOnClickListener{
-            string+="0"
-            dataModel.inputData.value=string
+            if(string!="0"){
+                string+="0"
+                dataModel.inputData.value=string
+            }
+
         }
         binding.btn1.setOnClickListener{
             string+="1"
@@ -66,16 +69,18 @@ class KeyboardFragment : Fragment() {
             dataModel.inputData.value=string
         }
         binding.backBtn.setOnClickListener{
-            if(string==""){
-
-            }else  string=string.dropLast(1)
+            if(string!=""){
+                string=string.dropLast(1)
+            }else dataModel.inputData.value=""
 
             dataModel.inputData.value=string
         }
         binding.dotBtn.setOnClickListener{
             if(string==""){
                 string+="0."
-            }else string+="."
+            }else if(!string.contains(".")){
+                string+="."
+            }
             dataModel.inputData.value=string
         }
 
