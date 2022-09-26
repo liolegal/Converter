@@ -54,8 +54,8 @@ class DataFragment : Fragment() {
             input = if (it.isNotEmpty()) {
                 it.toDouble()
             } else 0.0
-            binding.etInput?.setText(it)
-            binding.etOutput?.setText("")
+            binding.etInput.setText(it)
+            binding.etOutput.setText("")
 
 
         }
