@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
 import com.example.converter.databinding.FragmentKeyboardBinding
@@ -12,6 +13,7 @@ import com.example.converter.databinding.FragmentKeyboardBinding
 class KeyboardFragment : Fragment() {
     private val dataModel: DataModel by activityViewModels()
     lateinit var binding: FragmentKeyboardBinding
+    var string=""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -21,67 +23,54 @@ class KeyboardFragment : Fragment() {
 
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var string=""
+
         dataModel.inputData.observe(activity as LifecycleOwner) {
             string=it
         }
         binding.btn0.setOnClickListener{
-            if(string!="0"){
-                string+="0"
-                dataModel.inputData.value=string
-            }
-
+            onKeyboardClick("0")
         }
         binding.btn1.setOnClickListener{
-            string+="1"
-            dataModel.inputData.value=string
+            onKeyboardClick("1")
         }
         binding.btn2.setOnClickListener{
-            string+="2"
-            dataModel.inputData.value=string
+            onKeyboardClick("2")
         }
         binding.btn3.setOnClickListener{
-            string+="3"
-            dataModel.inputData.value=string
+            onKeyboardClick("3")
         }
         binding.btn4.setOnClickListener{
-            string+="4"
-            dataModel.inputData.value=string
+            onKeyboardClick("4")
         }
         binding.btn5.setOnClickListener{
-            string+="5"
-            dataModel.inputData.value=string
+            onKeyboardClick("5")
         }
         binding.btn6.setOnClickListener{
-            string+="6"
-            dataModel.inputData.value=string
+            onKeyboardClick("6")
         }
         binding.btn7.setOnClickListener{
-            string+="7"
-            dataModel.inputData.value=string
+            onKeyboardClick("7")
         }
         binding.btn8.setOnClickListener{
-            string+="8"
-            dataModel.inputData.value=string
+            onKeyboardClick("8")
         }
         binding.btn9.setOnClickListener{
-            string+="9"
-            dataModel.inputData.value=string
+            onKeyboardClick("9")
         }
         binding.backBtn.setOnClickListener{
-            if(string!=""){
-                string=string.dropLast(1)
-            }else dataModel.inputData.value=""
+//            if(string!=""){
+//                string=string.dropLast(1)
+//            }else dataModel.inputData.value=""
 
-            dataModel.inputData.value=string
+            dataModel.inputData.value="back"
         }
         binding.dotBtn.setOnClickListener{
-            if(string==""){
-                string+="0."
-            }else if(!string.contains(".")){
-                string+="."
-            }
-            dataModel.inputData.value=string
+//            if(string==""){
+//                onKeyboardClick("0.")
+//            }else if(!string.contains(".")){
+//                onKeyboardClick(".")
+//            }
+            onKeyboardClick(".")
         }
 
 
@@ -90,6 +79,14 @@ class KeyboardFragment : Fragment() {
 
 
     }
+    private fun onKeyboardClick(digit:String){
+//        if(string.length<15){
+//            string+=digit
+//            dataModel.inputData.value=string
+//        }else Toast.makeText(context,"Too more digits",Toast.LENGTH_SHORT).show()
+        dataModel.inputData.value=digit
+    }
+
     companion object {
      @JvmStatic
         fun newInstance()=KeyboardFragment()

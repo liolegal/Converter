@@ -20,6 +20,7 @@
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/common/res/layout/fragment_data.xml" value="0.25416666666666665" />
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/main/res/drawable/ic_baseline_content_copy_24.xml" value="0.114" />
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/main/res/drawable/ic_baseline_content_paste_24.xml" value="0.114" />
+        <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/main/res/drawable/launch_screen.xml" value="0.1125" />
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/main/res/drawable/rounded_shape.xml" value="0.114" />
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/main/res/layout-land/activity_main.xml" value="0.21516754850088182" />
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/main/res/layout/fragment_data.xml" value="0.11228070175438597" />
@@ -28,6 +29,10 @@
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/main/res/menu/values_menu.xml" value="0.1140625" />
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/premium/res/layout-land/fragment_data.xml" value="0.21516754850088182" />
         <entry key="..\:/1Study BSUIR/PPO_5sem/Converter/app/src/premium/res/layout/fragment_data.xml" value="0.25" />
+        <entry key="..\:/1Study_BSUIR/PPO_5sem/Converter/app/src/main/res/drawable/rounded_shape.xml" value="0.114" />
+        <entry key="..\:/1Study_BSUIR/PPO_5sem/Converter/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/1Study_BSUIR/PPO_5sem/Converter/app/src/main/res/layout/fragment_keyboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/1Study_BSUIR/PPO_5sem/Converter/app/src/premium/res/layout/fragment_data.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

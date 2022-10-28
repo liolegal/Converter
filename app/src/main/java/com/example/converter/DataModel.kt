@@ -11,4 +11,5 @@ open class DataModel:ViewModel() {
         MutableLiveData<String>()
 
     }
+    val data=MutableLiveData("")
 }
